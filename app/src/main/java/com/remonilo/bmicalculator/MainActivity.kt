@@ -76,7 +76,7 @@ private val bmiCategories = listOf(
     BmiCategory("Kurus", "< 18.5", Color(0xFF4C8DFF)),
     BmiCategory("Normal", "18.5 - 24.9", GreenPrimary),
     BmiCategory("Gemuk", "25.0 - 29.9", Color(0xFFF2A93B)),
-    BmiCategory("Obesitas", "\u2265 30.0", Color(0xFFE35D5D))
+    BmiCategory("Obesitas", "≥ 30.0", Color(0xFFE35D5D))
 )
 
 private fun categoryFor(bmi: Double): BmiCategory = when {
@@ -148,7 +148,7 @@ fun BmiCalculatorApp() {
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = PurplePrimary)
                 ) {
-                    Text("\uD83E\uDDEE  Hitung BMI", fontWeight = FontWeight.SemiBold)
+                    Text("Hitung BMI", fontWeight = FontWeight.SemiBold)
                 }
 
                 OutlinedButton(
@@ -159,7 +159,7 @@ fun BmiCalculatorApp() {
                     shape = RoundedCornerShape(14.dp),
                     border = androidx.compose.foundation.BorderStroke(1.5.dp, HeaderBlue)
                 ) {
-                    Text("\uD83D\uDD04  Reset", color = HeaderBlue, fontWeight = FontWeight.SemiBold)
+                    Text("Reset", color = HeaderBlue, fontWeight = FontWeight.SemiBold)
                 }
 
                 Button(
@@ -170,7 +170,7 @@ fun BmiCalculatorApp() {
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
                 ) {
-                    Text("\uD83D\uDCCA  Lihat Kategori", fontWeight = FontWeight.SemiBold)
+                    Text("Lihat Kategori", fontWeight = FontWeight.SemiBold)
                 }
 
                 bmiResult?.let { hasil ->
@@ -198,10 +198,10 @@ private fun BmiHeader() {
             Box(
                 modifier = Modifier
                     .size(32.dp)
-                    .background(Color.White.copy(alpha = 0.2f), CircleShape),
+                    .background(Color.White, CircleShape),
                 contentAlignment = Alignment.Center
             ) {
-                Text("\u2696\uFE0F", fontSize = 16.sp)
+                Text("⚖️", fontSize = 16.sp)
             }
             Spacer(modifier = Modifier.width(12.dp))
             Text(
